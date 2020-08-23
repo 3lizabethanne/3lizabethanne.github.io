@@ -1,0 +1,116 @@
+html{
+    background-image: url(https://github.com/3lizabethanne.github.io/bluetilestriangles.jpg);
+    background-size: contain;
+    background-color: cornflowerblue;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    color: #ffffff;
+    } 
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;;
+    font-size: 72px;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    color: #ffffff;
+    
+}
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 7px;
+}
+h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: right;
+}
+#work{
+    border-radius: 7px;
+    padding: 20px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    list-style: none;
+    width: 33%;
+    padding-left: 400px;
+    
+}
+li {
+    background-color: darkblue;
+    border-radius: 50px;
+    margin: 20px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 60px;
+ 
+}
+a:visited {
+    color: #ffffff;
+}
+a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+.footer {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    word-spacing: 10px;
+    }    
+
+body > div{
+    display:flex;
+    flex-flow:row wrap;
+    }
+body > div > header, main, aside, footer{
+    text-align: center;
+    border-radius:7px;
+    margin:10px;
+    padding:20px;
+    }
+header{
+    order:1;
+    height:160px;
+    flex:0 1 100%;
+    background-color: darkblue;
+    opacity: 60%;
+    line-height: 30px;
+    letter-spacing: 10px;
+    word-spacing: 15px;
+    }
+
+main{
+    order:2;
+    min-height:400px;
+    flex:1;
+    background-color: cornflowerblue;
+    opacity: 80%;
+    }
+aside{
+    order:3;
+    width: 300px;
+    height: 750px;
+    background-color: cornflowerblue;
+    opacity: 60%;
+    border-radius: 7px;
+    padding: 20px 20px;
+    }
+footer{
+    height:50px;
+    order:4;
+    flex:0 1 100%;
+    background-color: darkblue;
+    opacity: 65%;
+    }
