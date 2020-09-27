@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Extra Credit for JavaScript Assignment #3</title>
+        
+        <meta name="description" content="This is the webpage for the extra credit portion of assignment #3 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <script>
+            
+            //Declare variables
+            
+            var num1, num2;
+
+            function setupProcess() {
+                function getNumbers (){
+                    return (Math.floor(Math.random() * 10));
+                }
+            
+            // present mulitplication problem
+
+                num1 = getNumbers();
+                num2 = getNumbers();
+            }
+
+            function process(){
+                setupProcess();
+                document.getElementById("problem").innerHTML = (num1.toFixed(0) +" " + "x" + " " + num2.toFixed(0));
+                document.getElementById("answer").innerHTML = ' ';
+                document.getElementById("results").innerHTML = ' ';
+                document.getElementById("errOut").value = ' ';
+            
+            }   
+
+            function checkAnswer (){
+                // Declare variables
+                var answer;
+                var errMsg1="<span style='font-weight: bold; color: red; font-size: 20px;'>Hint: Answer will be a positive number.</span>";
+
+                //get values from form using getElementById and clear text box
+                answer = document.getElementById("answer").value;
+                document.getElementById("answer").value = ' ';
+                document.getElementById("errOut").value = ' ';
+                document.getElementById("results").value = ' ';
+
+                 // Validate input - if not then alert error msg...else proceed
+            
+                if ( isNaN(answer) || answer < 0 || answer== " ")
+                {
+                document.getElementById("errOut").innerHTML = errMsg1;
+                }
+                else {
+
+                //Convert input string to numeric 
+                var userAnswer = parseInt( answer );
+                }
+                 if (userAnswer === num1 * num2) {
+                    document.getElementById("errOut").innerHTML = ' ';
+                    document.getElementById("results").innerHTML = (userAnswer + " " + "is <span style='color: lime;'>correct</span>.<br>Excellent work!<br>Press NEXT to continue learning!");
+                    
+                 }
+                 else {
+                    document.getElementById("results").innerHTML = (userAnswer + " " + " is <span style='color: red;'> incorrect</span>.<br>Please try again.");
+                    
+                 }
+                
+            //end function
+            }
+           
+            </script>
+        
+    </head>
+
+    <body onload="process()">
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Functions: Extra Credit</h3>
+                <h3><span style="color: darkblue;">Time for Times Tables!</span></h3>
+                    <p>Answer the muliplication problem. Click SUBMIT to see your results and NEXT to continue learning.</p>
+                <form id="grades" name="myform">
+                    <div class="resultbox">
+                    <table>
+                        <tr>
+                            <td>How much is</td>
+                            <td id="problem" ></td>
+
+                            <td><input type="text" id="answer"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="button"  onclick="checkAnswer()" value="SUBMIT">
+                    <div id ="errOut"></div> 
+                    <br>
+                    <span style="color: #ffffff; font-size: 20px;">Your answer was...</span> 
+                    <div id="results"></div>
+                    </div>
+                    <br><br>
+                    
+                    <input type="reset" value="NEXT" onclick="process()" style="display: list-item; float: right;"><br><br>
+                    
+                </form>
+
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-3.html">Part I</a></li>
+                    <li><a href="part2-3.html">Part II</a></li>
+                    <li><a href="part3-3.html">Part III</a></li>
+                    <li><a href="extracredit-3.html">Extra Credit</a></li>
+                    <li><a href="hw3.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>

@@ -50,6 +50,12 @@ h4 {
     text-align: justify;
     font-weight: bold;
     } 
+.resultbox {
+    border: 2px solid #ffffff;
+    border-spacing: 20px;
+    padding: 10px;
+
+}
 #work{
     border-radius: 7px;
     padding: 20px 20px;
@@ -61,6 +67,21 @@ h4 {
     width: 33%;
     padding-left: 400px;
     
+}
+#grades{
+    display: inline-block;
+}
+td, th {
+    padding: 5px;
+}
+th {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+#totals {
+    border-spacing: 20px;
+    border: 2px solid #ffffff; 
 }
 #sidemenu {
     border-radius: 7px;

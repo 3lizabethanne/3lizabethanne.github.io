@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part III of JavaScript Assignment #3</title>
+        
+        <meta name="description" content="This is the webpage for part III of assignment #3 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        
+
+        <script> 
+            function process1() {
+
+            //Declare variables
+            var errMsg1="<span style='font-weight: bold; color: red; font-size: 20px;'>Invalid: Entries must be numeric.</span>";
+            var d;
+
+            //Get value from form using getElementById
+            d = document.getElementById("degree").value;
+           
+            // Validate User Input
+            if ( isNaN(d) || d =="" )
+                {
+                document.getElementById("errOut").innerHTML = errMsg1;
+               }
+            else {
+            //Convert input string to numeric 
+               F = parseInt( d );
+            
+            //Convert C to F
+                Celsius = 5/9 * (F - 32)
+           } 
+            // Display the Output
+            document.getElementById("results").innerHTML = ( d + "&deg; Farenheit is" + " " + Celsius.toFixed(0) +"&deg; Celsius");
+
+            } //end function
+
+            function process2() {
+
+                //Declare variables
+                var errMsg1="<span style='font-weight: bold; color: red; font-size: 20px;'>Invalid: Entry must be numeric.</span>";
+                var d;
+    
+                //Get value from form using getElementById
+                d = document.getElementById("degree").value;
+               
+                // Validate User Input
+                if ( isNaN(d) || d =="" )
+                    {
+                    document.getElementById("errOut").innerHTML = errMsg1;
+                   }
+                else {
+                //Convert input string to numeric 
+                   C = parseInt( d );
+                
+                //Convert C to F
+                    Farenheit =  (9/5 * C) + 32
+               } 
+                // Display the Output
+                document.getElementById("results").innerHTML = ( d + "&deg; Celsius is" + " " + Farenheit.toFixed(0) +"&deg; Farenheit");
+    
+                } //end function
+
+            function res()
+            {
+            document.getElementById("results").innerHTML = "";
+            document.getElementById("errOut").innerHTML = "";
+            }
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Functions: Part III</h3>
+                    <p>Enter temperture, then choose appropriate button to covert to desired units.</p>
+                <section>
+                    <form id="grades" name="myform">
+                        <table>
+                            <tr>
+                                <td>Temperature:</td> 
+                                <td><input type="number" id="degree" autofocus=""></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div id ="errOut"></div> 
+                        <br>
+                        
+                        <input type="button"  onclick="process1()" value="Convert to Celsius">
+                        <input type="button"  onclick="process2()" value="Convert to Farenheit">
+                        <input type="reset" value="RESET" onclick="res()"><br><br>
+                        <div class="resultbox">
+                        <span style="color:#ffffff; font-size: 20px;">Temperature Conversion:</span> 
+                        <br><br>
+                        <div id="results"></div>
+                        <br><br>
+                        </div>
+                    </form>
+                </section>
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-3.html">Part I</a></li>
+                    <li><a href="part2-3.html">Part II</a></li>
+                    <li><a href="part3-3.html">Part III</a></li>
+                    <li><a href="extracredit-3.html">Extra Credit</a></li>
+                    <li><a href="hw3.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>

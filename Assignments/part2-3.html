@@ -1,0 +1,170 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part II of JavaScript Assignment #3</title>
+        
+        <meta name="description" content="This is the webpage for part II of assignment #3 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        
+        <script>
+            /*jQuery code for tooltip  */
+            $(function() {
+            $( document ).tooltip();
+            });
+        </script>
+        <script>
+
+            function process() {
+            
+            //Declare variables
+            
+            var salesperson, i1, i2, i3, i4, item1, item2, item3, item4, week_total, commission;
+            
+            var errMsg1="<span style='font-weight: bold; color: red; font-size: 20px;'>Invalid: Entries must be numeric.</span>";
+            
+            //get values from form using getElementById
+
+            salesperson = document.getElementById("salesperson").value;
+            
+            i1 = document.getElementById("item1").value;
+            
+            i2 = document.getElementById("item2").value;
+            
+            i3 = document.getElementById("item3").value;
+
+            i4 = document.getElementById("item4").value;
+            
+            // Validate input - if not then alert error msg...else proceed
+            
+            if ( isNaN(i1) || isNaN(i2) ||isNaN(i3) || isNaN(i4) || i1=="" || i2=="" || i3==""|| i4=="" || i1 < 0 || i2 < 0 || i3 < 0 || i4 < 0)
+                {
+                 document.getElementById("errOut").innerHTML = errMsg1;
+                }
+            else {
+            //Convert input string to numeric 
+                 item1 = parseInt( i1 );
+                 item2 = parseInt( i2 );
+                 item3 = parseInt( i3 );
+                 item4 = parseInt( i4 );
+
+            //Calculate each item's total
+                item1Total = (239.99 * item1);
+                item2Total = (129.75 * item2);
+                item3Total = (99.95 * item3);
+                item4Total = (350.89 * item4);
+                
+            //Calculate week totals
+                 week_total = item1Total + item2Total + item3Total + item4Total;
+
+            //Calculate sales commission
+                commission = ((week_total * .09) + 250);
+            
+            //Display results
+                document.getElementById("item1Total").innerHTML = ("$" + item1Total.toFixed(2));
+                document.getElementById("item2Total").innerHTML = ("$" + item2Total.toFixed(2));
+                document.getElementById("item3Total").innerHTML = ("$" + item3Total.toFixed(2));
+                document.getElementById("item4Total").innerHTML = ("$" + item4Total.toFixed(2));
+                document.getElementById("results").innerHTML = ("Total Sales: $" + week_total.toFixed(2) +
+                "<br>Earnings for" + " " + salesperson + ": $" + commission.toFixed(2))
+            
+            //end else logic
+             } 
+            
+            //end function
+            }
+            
+            
+            function res()
+            {
+            document.getElementById("results").innerHTML = "";
+            document.getElementById("errOut").innerHTML = "";
+            }
+            
+            </script>
+
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Functions: Part II</h3>
+                    <p>Enter salesperson's name. Then enter the number of units sold for each item. SUBMIT to view summary.</p>
+                <section>
+                    <form id="grades" name="myform">
+                        <p><label for="Salesperson">Salesperson:</label><input id="salesperson" name="salesperson" 
+                        title="Please make sure the salesperson's name is entered correctly."></p>
+                        <table id="totals">
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Number Sold</th>
+                                <th>Total</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>$239.99</td>
+                                <td><input type="number" id="item1" size="2"></td>
+                                <td id="item1Total"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>$129.75</td>
+                                <td><input type="number" id="item2" size="2"></td>
+                                <td id="item2Total"></td>
+
+                            <tr>
+                                <td>3</td>
+                                <td>$99.95</td>
+                                <td><input type="number" id="item3" size="2"></td>
+                                <td id="item3Total"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>$350.89</td>
+                                <td><input type="number" id="item4" size="2"></td>
+                                <td id="item4Total"></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div id ="errOut"></div> 
+                        <br>
+                        
+                        <input type="button"  onclick="process()" value="SUBMIT">
+                        <input type="reset" value="RESET" onclick="res()"><br><br>
+                        <div class="resultbox">
+                        <span style="color:#ffffff; font-size: 20px;">Sales Summary:</span> 
+                        <br><br>
+                        <div id="results"></div>
+                        <br>
+                        </div>
+                    </form>
+                </section>
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-3.html">Part I</a></li>
+                    <li><a href="part2-3.html">Part II</a></li>
+                    <li><a href="part3-3.html">Part III</a></li>
+                    <li><a href="extracredit-3.html">Extra Credit</a></li>
+                    <li><a href="hw3.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>

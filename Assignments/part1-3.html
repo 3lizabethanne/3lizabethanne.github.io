@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part I of JavaScript Assignment #3</title>
+        
+        <meta name="description" content="This is the webpage for part I of assignment #3 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <script>
+            function process() {
+            
+            //Declare variables
+            
+            var hw, me, fe, par, gpaP, hwP, feP, final_avg, fin_grade;
+            
+            var errMsg1="<span style='font-weight: bold; color: red; font-size: 20px;'>Invalid: Grades must be numeric.</span>";
+            
+            //get values from form using getElementById
+            
+            hw = document.getElementById("hwavg").value;
+            
+            me = document.getElementById("mexam").value;
+            
+            fe = document.getElementById("fexam").value;
+
+            par = document.getElementById("partic").value;
+            
+            // Validate input - if not then alert error msg...else proceed
+            
+            if ( isNaN(hw) || isNaN(me) ||isNaN(fe) || isNaN(par) || hw=="" || me=="" || fe==""|| par=="" || hw > 100 || hw < 0 ||me > 100 || me < 0 || fe < 0 || fe > 100 || par > 100 || par < 0 )
+                {
+                 document.getElementById("errOut").innerHTML = errMsg1;
+                }
+            else {
+            //Convert input string to numeric 
+                 hwAvg = parseInt( hw );
+                 midExam = parseInt( me );
+                 finalExam = parseInt( fe );
+                 participation = parseInt( par );
+            //Calculate final average
+                 final_avg = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation);
+            
+            //Determine which case user's data falls into for results
+            
+                 switch(true) {
+            
+                   case (final_avg >= 90):
+                      document.getElementById("results").innerHTML = ("The final average is " + Math.round( final_avg ) +  
+            "<br>The final grade is A<br>Excellent work!")
+                      break;
+            
+                   case (final_avg >= 80):
+                      document.getElementById("results").innerHTML = ("The final average is " + Math.round( final_avg ) +  
+            "<br>The final grade is B<br>Good work!")
+                      break;
+            
+                   case (final_avg >= 70):
+                      document.getElementById("results").innerHTML = ("The final average is " + Math.round( final_avg ) +  
+            "<br>The final grade is C<br>Average work!") 
+                      break;
+            
+                   case (final_avg >= 60):
+                      document.getElementById("results").innerHTML = ("The final average is " + Math.round( final_avg ) +  
+            "<br>The final grade is D<br>Poor work!<br>Student must re-take the course.")
+                      break;
+            
+                   default:
+                      document.getElementById("results").innerHTML = ("The final average is " + Math.round( final_avg ) +  
+            "<br>The final grade is F<br>Failing work!<br> <span style= 'color: red;'>Student must re-take the course.</span>")
+            
+            //end switch logic
+                }
+            
+            //end else logic
+             } 
+            
+            //end function
+            }
+            
+            
+            function res()
+            {
+            document.getElementById("results").innerHTML = "";
+            document.getElementById("errOut").innerHTML = "";
+            }
+            
+            </script>
+        
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Functions: Part I</h3>
+                <h3><span style="color: darkblue;">Student Grades</span></h3>
+                    <p>Enter individual students' grades using numeric values.</p>
+                <form id="grades" name="myform">
+                    <table>
+                    <tr>
+                        <td>Homework Average: </td>
+                        <td><input type="number" id="hwavg" size="4"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Midterm Exam: </td>
+                        <td><input type="number" id="mexam" size="4"></td>
+                    </tr>
+        
+                    <tr>
+                        <td>Final Exam: </td>
+                        <td><input type="number" id="fexam" size="4"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Participation: </td>
+                        <td><input type="number" id="partic" size="4"></td>
+                    </tr>
+                    </table>
+                    <br>
+                    
+                    <div id ="errOut"></div> 
+                    <br>
+                    
+                    
+                    <input type="button"  onclick="process()" value="SUBMIT">
+                    <input type="reset" value="RESET" onclick="res()"><br><br>
+                    <div class="resultbox">
+                    <span style="color: #ffffff; font-size: 20px;">Summary of Final Grade:</span> 
+                    <br><br>
+                    <div id="results"></div>
+                    <br>
+                    </div>
+                </form>
+
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-3.html">Part I</a></li>
+                    <li><a href="part2-3.html">Part II</a></li>
+                    <li><a href="part3-3.html">Part III</a></li>
+                    <li><a href="extracredit-3.html">Extra Credit</a></li>
+                    <li><a href="hw3.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>
