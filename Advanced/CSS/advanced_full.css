@@ -1,0 +1,126 @@
+body{   
+    background-image: url(../Images/lavender.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: gainsboro;
+    } 
+p   {
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.3rem;
+    line-height: 25px;
+    font-weight: 800;
+    } 
+#headshot {
+    width: 250px;
+    border: 2px solid lavender;
+    float: right;
+    margin-left: 20px;
+}
+#work {
+    padding: 20px 20px;
+    font-family: 'Josefin Slab', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+h1 {
+    text-align: left;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 0.25rem;
+    font-size: 4rem;
+    color: lavender;
+}
+h2 {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 0.2rem;
+    font-size: 2.75rem; 
+}
+h3 {
+    font-family: 'Josefin Slab', serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+.menu li {
+    background-color: lavender;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    font-family: 'Josefin Slab', serif;
+    list-style: none;
+    color: red;
+}
+.menu a:link::after {
+    content: none;
+}
+a:link {
+    color: black;
+    text-decoration: none;
+}
+a [href$="htm"], a[href$="html"]::after {
+    content: url(../Images/browser.png);
+}
+a[href$="pdf"]::after {
+    content: url(../Images/pdf.png);
+}
+a::after {
+    content: url(../Images/intmark.png);
+}
+.tips {
+   max-width: 700px;
+   margin-left: 125px;
+   background-color: gainsboro;
+   opacity: 70%;
+   border-radius: 5px;
+   padding: 10px;
+
+}
+.footer {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Josefin Slab', serif;
+    text-align: left;
+    }
+.footer a:link::after {
+    content: none;
+    }    
+
+body > div{
+    display:flex;
+    flex-flow:row wrap;
+    }
+body > div > header, nav, main, aside, footer{
+    text-align: center;
+    border-radius:7px;
+    margin:10px;
+    padding:20px;
+    }
+header{
+    order:1;
+    height:100px;
+    flex:0 1 100%;
+    line-height: 60px;
+    }
+nav{
+    order:2;
+    flex:0 1 200px;
+    width: 20px;
+    }
+main{
+    order:3;
+    min-height:400px;
+    flex:1;
+    }
+aside{
+    order:4;
+    width: 250px;
+    height: 750px;
+    
+    }
+footer{
+    height:100px;
+    order:5;
+    flex:0 1 100%;
+    }
