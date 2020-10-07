@@ -1,0 +1,84 @@
+<!DOCTYPE html> 
+<html lang="en">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Using Flexboxes</title>
+	<style>
+		body{
+  		margin:0px;
+}
+		body > div{
+  		display:flex;
+  		flex-flow:row wrap;
+}
+
+		body > div > header, aside1, main1, main2, aside2, footer{
+  		font-size: 18px;
+		text-align: center;
+  		padding:20px;
+		font-weight: bolder;
+}
+
+		header{
+  		order:1;
+  		height:15px;
+  		flex:0 1 100%;
+		background-color: coral;
+}
+		aside1{
+  		order:2;
+  		flex:0 1 200px;
+		height: 200px;
+		background-color: yellow;
+}
+		main1{
+  		order:3;
+  		height:200px;
+  		flex:1;
+		background-color: darkblue;
+		color: white;
+		text-align: left;
+		
+}
+		main2{
+  		order:4;
+  		height:200px;
+  		flex:1;
+		color: blue;
+		background-color: violet;
+		text-align: left;
+		
+}
+		aside2{
+  		order:5;
+  		flex:0 1 200px;
+		height: 200px;
+		background-color: pink;
+}
+		footer{
+  		height:30px;
+  		order:6;
+  		flex:0 1 100%;
+		background-color: mediumspringgreen;
+		line-height: 3px;
+}
+	</style>
+</head>
+<body>
+	<div>
+  		<header>Name of Company</header>
+  		<aside1>This is the aside 1</aside1>
+  		<main1>
+			<p>This is the main content of my page! This is the main content of the page. In a 3-column layout it should be shown in the middel between the aside 1 and aside 2! </p>
+		</main1>
+		<main2>
+			<p>This column was created to have some content as a challenge to adapt the old 3 column layout to a 4 column layout. </p>
+		</main2>
+  		<aside2>This is the aside 2</aside2>
+  		<footer>This is the footer
+			<p>Copyright ©2017</p>
+		</footer>
+	</div>
+</body>
+</html>
