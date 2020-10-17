@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part I of JavaScript Assignment #4</title>
+        
+        <meta name="description" content="This is the webpage for part I of assignment #4 using JavaScript, Fall 2020, topic is Looping">
+        
+        <link rel="stylesheet" href="hw.css">
+		
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script>
+			$(function() {
+   				$( "#draggable" ).draggable();
+			});
+		</script>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+				<div class="resultbox" id="draggable">
+                <h3>For Loop: Part Ia</h3>
+                <script>
+  					var sum = 0;
+					var product = 1;
+
+  					for ( var number = 5; number <= 21; number += 4 ){ 
+     					sum += number;
+						product *= number;
+  					}
+
+  					document.write( "<p>The SUM of every 4th integer between 5 and 21 is" + " " + sum +"</p>");
+					
+					document.write("<p>" + "The PRODUCT of every 4th integer between 5 and 21 is " + " " + product.toLocaleString() + "</p>" );
+				</script>
+					<br>
+					<p><span style="color: #ffffff; font-size: 1rem; font-style: italic">*Box is draggable</span></p>
+				</div>
+				<br>
+				<div class="resultbox">
+                <h3>While Loop: Part Ib</h3>
+                <script>
+  					var product, sum, x;
+					var formatter = new Intl.NumberFormat();
+					var fn;
+          			product = 1;
+          			x = 3;
+          			sum = 0;	
+		
+         			while   (x <= 21 ) {
+	      				product *= x;
+              			sum += x;
+	      					x = x + 3;	
+					}
+  					document.write( "<p>The SUM of every 3rd integer between 3 and 21 is" + " " + sum +"</p>");
+					
+					document.write("<p>" + "The PRODUCT of every 3rd integer between 3 and 21 is " + " " + product.toLocaleString() + "</p>" );
+				</script>
+				</div>
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-4.html">Part I</a></li>
+                    <li><a href="part2-4.html">Part II</a></li>
+                    <li><a href="hw4.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part II of JavaScript Assignment #4</title>
+        
+        <meta name="description" content="This is the webpage for part II of assignment #4 using JavaScript, Fall 2020, topic is Looping">
+        
+        <link rel="stylesheet" href="hw.css">
+		
+        <style>
+            table {
+                margin-left: 250px;
+            }
+            th {
+                background-color: maroon;
+                color: #ffffff;
+            }
+            tr:nth-child(even) {
+                background: yellow;
+            }
+            tr:nth-child(odd) {
+                background: coral;
+            }
+        
+        </style>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+				<h3>Looping: Part II</h3>
+				<script type = "text/javascript">
+			    // declare variables
+					var r;
+					var P = 1000;
+					var A;
+                    o = {style: "currency", currency: "USD"};
+    
+                // table setup with headings
+                for (var i = 1; i <= 3; i++){
+                // set 3 different interest values 
+                    if (i == 1){
+                        r = 0.05;
+                    }
+                    if (i == 2){
+                        r = 0.06;
+                    }
+                    if (i == 3){
+                        r = 0.07;
+                    } 
+					document.writeln( "<table>" );
+					document.writeln("<th>" + "Year" + "</th>");
+					document.writeln("<th>" + "Amount on Deposit" + "</th>");
+					document.writeln("<th>" + "Interest Rate" + "</th>");
+                    
+                    // loop to create table rows
+					   for ( var n = 1; n <= 10; n++ ) {
+						document.writeln( "<tr>" );
+                        A = P * Math.pow((1 +r), n);
+							document.writeln("<td>" + n +"</td>");
+				            document.writeln("<td>" + A.toLocaleString("en", o) + "</td>");
+							document.writeln("<td>" + r + "</td>");
+						document.writeln( "</tr>" );
+                        }
+                    
+					document.writeln( "</table>" );
+                    }
+                
+                
+				</script>
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-4.html">Part I</a></li>
+                    <li><a href="part2-4.html">Part II</a></li>
+                    <li><a href="hw4.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>
+</html>
+
