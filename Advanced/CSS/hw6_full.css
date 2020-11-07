@@ -40,7 +40,9 @@ margin-top: -170px;
 font-size: 2rem;
 font-family: serif;
 color: cornflowerblue;
-animation: slogan linear 10s;
+animation-name: spin, slogan;
+animation-timing-function: linear;
+animation-duration: 10s;
 animation-play-state: running;
 min-width: 500px;
 }
@@ -48,8 +50,15 @@ min-width: 500px;
     0% {transform: translateX(-500px); font-weight: 500; color: mediumblue;}
     25% {transform: translateX(50px); font-weight: 600; color: orange;}
     50% {transform: translateX(150px); font-weight: 800; color: mediumblue;}
-    75% {transform: translateX(calc(100vw - 850px)); font-weight: 500; color: orange;}
+    75% {transform: translateX(calc(100vw - 850px)) rotateX(180deg); font-weight: 500; color: orange;}
     90% {transform: translateX(200px); font-weight: 200; color: mediumblue;}
     100% {transform: translateX(10px); font-weight: 100; color: orange;}
 }
-
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
