@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+   <title>Position of Elements</title>
+
+   <meta charset="utf-8">
+
+   <meta name="description" content="working with position css">
+
+   <style>
+@mixin important-content {
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid red;
+border-radius: 10px;
+}
+
+.veryimportant {
+  @include @mixin important-content;
+  background-color: yellow;
+}
+
+   </style>
+
+</head>
+
+<body>
+
+<h1>Working with Positions</h1>
+
+<p>Working with position absolute inside a parent with no position set</p>
+
+<div class="veryimportant">
+
+   <h2>This heading inside the div content</h2>
+
+   <p>Just this paragraph here inside the div content</p>
+
+   <p>Paragraph with id of abs that will have position absolute inside the content div</p>
+
+   <p>Just the last paragraph inside the content div</p>
+
+</div>
+
+<p>A paragraph outside the div content</p>
+
+</body>
+
+</html>
