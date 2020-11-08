@@ -106,6 +106,9 @@ form, input{
     font-family: 'Roboto', sans-serif;
     color: darkblue;
 }
+.label {
+    font-weight: bold;
+}
 .button{
     background-color: darkblue;
     color: #ffffff;

@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part I of JavaScript Assignment #5</title>
+        
+        <meta name="description" content="This is the webpage for part I of assignment #5 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        <style>
+        #msg, #msg2, #msg3, #msg4 {color: red;}
+        
+        </style>
+        
+        <script>
+           function Validate(){
+                var msg = "Enter a name";
+                var x=0;   // use x for determining if form fields valid 
+	
+                // check for any space characters that may be input
+                var name = document.getElementById("name").value;
+  	             if (name == "" || name == null){          	
+                    document.getElementById("msg").innerHTML = msg;
+                        x=1;
+                    }          
+                var destChecked = false;    
+                    for (var i=0; i<4; ++i) {
+                        if (document.survey.destination[i].checked) {
+                            destChecked = true;
+                            break;
+                        }
+                    }
+                    if (destChecked == false) {
+                        document.getElementById("msg2").innerHTML = "<br>Check at least 1 destination"; 
+                        x=1;
+                    }
+                        
+                var language = document.forms["survey"].elements["language"].selectedIndex;
+                    if (language < 1)  {
+                        document.getElementById("msg3").innerHTML = "<br>Select a language";
+                        x=1;
+                    }
+               var seasonChecked = false;
+                for(var i = 0; i < 4; ++i){
+                    if (document.survey.season[i].checked) {
+                        seasonChecked = true;
+                        break;
+                        }
+                }
+                if (seasonChecked == false) {
+                    document.getElementById("msg4").innerHTML = "<br> Select a season.";
+                    x=1;
+                }
+               if ( x == 0 ) {
+                   window.open("process.html");
+                }
+               res();
+}
+function res(){
+document.getElementById("msg").innerHTML = " ";
+document.getElementById("msg2").innerHTML = " ";
+document.getElementById("msg3").innerHTML = " ";
+document.getElementById("msg4").innerHTML = " ";
+}
+        </script>        
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Arrays: Part I</h3>
+                    <div class="resultbox">    
+                    <h3>Travel Survey</h3>
+		              <form name="survey" id="survey">
+			             <div>
+				            <label for="name" class="label">NAME </label>
+				            <input name="name" type="text" class="required" id="name" title="Please type your name.">
+                            <div id="msg"></div> 
+			             </div>
+                          <br>
+                          <div>
+                            <label class="label">DESTINATIONS</label>
+                                <div id="msg2"></div>  
+                              <br>
+				            <input name="destination" type="checkbox" id="canada" value="canada" class="required" title="Please check at least 1 country.">
+				            <label for="canada">Canada</label>
+				            <input name="destination" type="checkbox" id="france" value="france">
+				            <label for="france">France</label>
+				            <input name="destination" type="checkbox" id="italy" value="italy">
+				            <label for="italy">Italy</label>
+                            <input name="destination" type="checkbox" id="spain" value="spain">
+				            <label for="spain">Spain</label>
+			             </div>
+                          <br>
+			             <div>
+				            <label for="language" class="label">LANGUAGE</label>
+				            <select name="language" id="language" class="required" title="Please choose a language.">
+                                <div id="msg3"></div>   
+					           <option value="">--Please select one--</option>
+					           <option value="english">English</option>
+					           <option value="french">French</option>
+					           <option value="italian">Italian</option>
+					           <option value="spanish">Spanish</option>
+				            </select>
+			             </div>
+                          <br>
+			             <div class="label">WHAT TIME OF YEAR DO YOU PREFER TO TRAVEL?</div>
+                        <div id="msg4"></div>
+			             <div>
+                            <input  type="radio" name="season" id="spring" value="spring" class="required" title="Please select an option">
+				            <label for="spring">Spring</label>
+				            <input  type="radio" name="season" id="summer" value="summer" class="required" title="Please select an option">
+				            <label for="summer">Summer</label>
+                            <input  type="radio" name="season" id="fall" value="fall" class="required" title="Please select an option">
+				            <label for="fall">Fall</label>
+				            <input type="radio" name="season" id="winter" value="winter">
+				            <label for="winter">Winter</label>
+			             </div>
+                          <br>
+			             <div>
+				            <input type="button" name="submit" id="submit" value="Submit" onclick="Validate();">
+                            <input type="reset" value="Reset" onclick="res();">
+			             </div>
+		          </form>
+                </div>
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-5.html">Part I</a></li>
+                    <li><a href="part2-5.html">Part II</a></li>
+                    <li><a href="part3-5.html">Part III</a></li>
+                    <li><a href="hw5.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>
+</html>
