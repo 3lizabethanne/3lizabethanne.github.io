@@ -16,8 +16,8 @@
         
         <script>
             function goToNewPage(myForm) {
-            var myDestination = window.open(myForm.destinationList.options[myForm.destinationList.selectedIndex].value);
-            window.location = myDestination;
+            var myDestination = myForm.destinationList.options[myForm.destinationList.selectedIndex].value;
+            window.open(myDestination);
             }
         </script>
         
@@ -34,18 +34,18 @@
                     <p>Choose your destination (using onChange event handler)</p>
                     <select name="destinationList" onChange="goToNewPage(this.form);">
                         <option>Choose Destination:</option>
-                        <option value="http://www.ccsf.edu/">City College of SF</option>
-                        <option value="http://sfpl.org/">SF Library</option>
-                        <option value="http://sf.gov/">SF Services</option>
+                        <option value="https://www.ccsf.edu/">City College of SF</option>
+                        <option value="https://sfpl.org/">SF Library</option>
+                        <option value="https://sf.gov/">SF Services</option>
                     </select>
                 </form>
                 <br><br>
                 <form>
                     <p>Choose your destination (using onClick event handler)</p>
                     <select name="destinationList">
-                        <option value="http://www.ccsf.edu/">City College of SF</option>
-                        <option value="http://sfpl.org/">SF Library</option>
-                        <option value="http://sf.gov/">SF Services</option>
+                        <option value="https://www.ccsf.edu/">City College of SF</option>
+                        <option value="https://sfpl.org/">SF Library</option>
+                        <option value="https://sf.gov/">SF Services</option>
                     </select>
                     <input type="button" value="Go" onClick="goToNewPage(this.form);">
                 </form>
