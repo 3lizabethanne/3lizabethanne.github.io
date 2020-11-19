@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part I of JavaScript Assignment #6</title>
+        
+        <meta name="description" content="This is the webpage for part I of assignment #6 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        
+        <style>
+            #errOut{
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+        
+        <script>
+           
+         function roundNumber(){
+            var errMsg = "Invalid input";
+            var dec = document.getElementById("number").value;     
+            var inputRegEx = /^[0-9]+\.[0-9]{4}$/;
+             
+          if ( isNaN(dec) || dec == ""  || ! inputRegEx.test(dec) ) {
+               document.getElementById("errOut").innerHTML = errMsg;
+
+              }
+            else {
+                document.getElementById("errOut").innerHTML = "";
+                var num = parseFloat(document.getElementById("number").value);
+
+            document.myForm.output.value = 
+               "The entered number: " + num +
+               "\n rounded up to the nearest integer: " + 
+                  roundToIntegerRound(num) +
+               "\n square rooted and rounded down to the nearest integer: " + roundSquareRoot(num) +
+               "\n rounded to the nearest tenth: " + 
+                  roundToTenthsTofixed(num) +
+               "\n rounded to the nearest hundredth: " + 
+                  roundToHundredthsTofixed(num) +
+               "\n rounded to the nearest thousandth: " + 
+                  roundToThousandthsTofixed(num);
+                     
+                 }
+          }
+
+         function roundToIntegerRound( number ){
+            return( Math.round( number) );
+         }
+
+         function roundSquareRoot( number ){
+            square = Math.sqrt(number);
+            round = Math.floor(square); 
+            return(round);
+         }
+
+         function roundToTenthsTofixed( number ){
+            return( number.toFixed(1));
+         }
+
+         function roundToHundredthsTofixed( number ){
+            return( number.toFixed(2));
+          }
+        function roundToThousandthsTofixed( number ){
+            return( number.toFixed(3));
+           }
+
+        function res() {    
+                       document.getElementById("errOut").innerHTML="";
+                       document.getElementById("number").focus();
+                       }
+        </script>
+        
+    </head>
+    <body onload="document.getElementById('number').focus();">
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Objects: Part I</h3>
+                    <div class="resultbox">
+                    <form name="myForm">
+                        Enter a number with at least 4 decimal positions: 
+                        <br><br>
+                        <input type="text" size="12" id="number"> 
+                        <input type="button" value="Round" onclick="roundNumber()">
+                        <div id ="errOut"></div>
+                        <br><br> 
+                        <textarea name = "output" rows = "8" cols = "60" readonly>
+                        </textarea>
+                        <br>   
+                        <input type="reset" value="Reset" onClick="res();">
+                    </form>
+                </div>        
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-6.html">Part I</a></li>
+                    <li><a href="part2-6.html">Part II</a></li>
+                    <li><a href="part3-6.html">Part III</a></li>
+                    <li><a href="hw6.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>
+</html>
