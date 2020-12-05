@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Part II of JavaScript Assignment #7</title>
+        
+        <meta name="description" content="This is the webpage for part II of assignment #7 using JavaScript, Fall 2020">
+        
+        <link rel="stylesheet" href="hw.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        
+        <style>
+            a{
+                text-decoration: none; 
+            }
+
+            ul{ 
+                list-style: none;
+            }
+
+            ul.dropdown { 
+                position: relative; 
+            }
+            ul.dropdown li { 
+                font-weight: bold; 
+                float: left; 
+                background: darkblue;
+                font-family: 'Roboto', sans-serif;
+                padding: 5px 5px;
+            }
+            ul.dropdown a:hover { 
+                color: #fff; 
+            }
+            ul.dropdown a:active { 
+                color: #ffa500; 
+            }
+            ul.dropdown li a{ 
+                display: block; 
+	 		    color: #fff;
+                margin: 3px;
+            } 
+            ul.dropdown li.hover, ul.dropdown li:hover { 
+                background: purple; 
+                color: #fff; 
+                position: relative; 
+            }
+            ul.dropdown li.hover a{ 
+                color: #fff; 
+            }
+           
+            ul.dropdown ul { 
+                width: 150px; 
+                visibility: hidden; 
+                position: absolute; 
+                top: 100%; 
+                left: 0;
+            }
+            ul.dropdown ul li { 
+                font-weight: normal; 
+                background: darkblue; 
+                color: #fff;  
+                float: none;
+            }
+									  
+            ul.dropdown ul li a	{ 
+                width: 100%; 
+                display: inline-block;
+            } 
+            ul.dropdown ul ul { 
+                left: 100%; 
+                top: 0; 
+            }
+            ul.dropdown li:hover > ul { 
+                visibility: visible; 
+            }
+
+        </style>
+        <script src="js/jquery-1.3.1.min.js"></script>	
+	   <script src="js/jquery.dropdownPlain.js"></script>
+        
+    </head>
+    <body>
+        <div>
+            <header>
+                <h1>CNIT 133 Assignments</h1>
+                <h2>JavaScript, jQuery, & AJAX</h2>
+            </header>  
+            <main>
+                <h3>Object Model & Event Model: Part II</h3>
+                    <p id="menu"><a href="hw1.html">Homework 1 Main Menu</a></p>
+                        <ul class="dropdown">
+        	               <li><a href="hw2.html">Homework 2</a>
+        		              <ul class="sub_menu">
+        			             <li><a href="part1.html">Part I</a></li>
+        			             <li><a href="part2.html">Part II</a></li>
+        		              </ul>
+        	               </li>
+        	               <li><a href="hw3.html">Homework 3</a>
+        		              <ul class="sub_menu">
+        			             <li><a href="part1-3.html">Part I</a></li>
+        			             <li><a href="part2-3.html">Part II</a></li>
+        			             <li><a href="part3-3.html">Part III</a></li>
+                                 <li><a href="extracredit-3.html">Extra Credit</a></li>  
+        		              </ul>
+        	               </li>
+                            <li><a href="hw4.html">Homework 4</a>
+        		              <ul class="sub_menu">
+        			             <li><a href="part1-4.html">Part I</a>
+                                    <ul>
+        					           <li><a href="part1-4.html">Part Ia</a></li>
+        					           <li><a href="part1-4.html">Part Ib</a></li>
+        				            </ul>
+                                 </li> 
+        			             <li><a href="part2-4.html">Part II</a></li> 
+        		              </ul>
+        	               </li>
+                           <li><a href="hw5.html">Homework 5</a>
+        		              <ul class="sub_menu">
+        			             <li><a href="part1-5.html">Part I</a></li>
+        			             <li><a href="part2-5.html">Part II</a></li>
+                                 <li><a href="part3-5.html">Part III</a></li>  
+        		              </ul>
+        	               </li>
+                           <li><a href="hw6.html">Homework 6</a>
+        		              <ul class="sub_menu">
+        			             <li><a href="part1-6.html">Part I</a></li>
+        			             <li><a href="part2-6.html">Part II</a></li>
+                                 <li><a href="part3-6.html">Part III</a></li>  
+        		              </ul>
+        	               </li>    
+                        </ul>           
+            </main> 
+            <aside>
+                <ul id="sidemenu">
+                    <li><a href="part1-7.html">Part I</a></li>
+                    <li><a href="part2-7.html">Part II</a></li>
+                    <li><a href="hw7.html">View All</a></li>
+                </ul>
+            </aside>
+            <footer>
+                <p class="footer"><a href="mailto:ebertoli@mail.ccsf.edu">ebertoli@mail.ccsf.edu</a>   |  ELIZABETHANNE&copy;2020</p>
+            </footer>  
+        </div>
+    </body>
+</html>

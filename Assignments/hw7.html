@@ -13,7 +13,24 @@
         <link rel="stylesheet" href="hw.css">
         
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+        
+        <script src="https://code.jquery.com/jquery-1.7.1.js"></script>
 
+        <script>
+            $(document).ready(function() {
+                $('.answer').hide();
+                $('.main h4').toggle(
+		      function() {
+                  $(this).next('.answer').slideDown();
+                  $(this).addClass('close');
+		      },
+		      function() {
+		          $(this).next('.answer').fadeOut();
+		          $(this).removeClass('close');
+	           }
+	           ); // end toggle
+            }); // end ready
+        </script>
         
     </head>
 
@@ -24,9 +41,21 @@
                 <h2>JavaScript, jQuery, & AJAX</h2>
             </header>  
             <main>
-                <h3>Coming Soon!</h3>
+                <h3>Homework 7 Object Model & Event Model</h3>
+                <div class="main">
+                <h4>Part I</h4>
+                    <div class="answer">
+                    <p class="descriptions">In Part I, the user must enter a number containing at least 4 decimal places. The number is then put through a series of calculations using Math.round, Math.floor, Math.sqrt, and toFixed. The results are then displayed to the user.</p> 
+                    <p>View Assignment <a href="part1-7.html">Part I</a></p>
+                    </div>
+                <h4>Part II</h4>
+                    <div class="answer">
+                    <p class="descriptions"> In Part II, the user is prompted to enter a text of their choice. The user then enters a character to search for within their entered text. The JavaScript uses the charAt() string method to search for the desired character. The results are then outputed into a text box if found. If no character is matched within the text, a new window opens that announces the negative results to the user.</p>
+                    <p>View Assignment <a href="part2-7.html">Part II</a></p>    
+                    </div>
+                </div>
                 <ul id="work">
-                    <li><a href="hw1.html">Return to Assignments</a></li>
+					<li><a href="hw1.html">Return to Assignments</a></li>
                 </ul>
             </main> 
             <footer>
@@ -34,3 +63,4 @@
             </footer>  
         </div>
     </body>
+</html>    

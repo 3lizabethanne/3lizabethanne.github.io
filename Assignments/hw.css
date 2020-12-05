@@ -38,7 +38,7 @@ h4 {
     text-align: center;
     padding: 20px 20px;
     width: 100px;
-    
+    color: #fff;
 }
 .descriptions {
     font-family: 'Roboto', sans-serif;
@@ -93,14 +93,18 @@ th {
     list-style: none;
     
 }
-li {
+li, #menu {
     background-color: darkblue;
     border-radius: 50px;
     margin: 20px;
     text-align: center;
     color: #ffffff;
     line-height: 60px;
- 
+}
+#menu {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 form, input{
     font-family: 'Roboto', sans-serif;
@@ -120,6 +124,9 @@ a:visited {
 a:link {
     color: #ffffff;
     text-decoration: none;
+}
+a:hover{
+    color: cornflowerblue;
 }
 .footer {
     font-size: 20px;
